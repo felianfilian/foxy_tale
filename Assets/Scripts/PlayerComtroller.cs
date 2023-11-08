@@ -8,7 +8,11 @@ public class PlayerComtroller : MonoBehaviour
     private float moveSpeed;
     private float jumpForce;
 
+    private bool isGrounded;
+
     public Rigidbody2D theRB;
+    public Transform groundCheckPoint; // Ground Point of the Player
+    public LayerMask whatIsGround; // Ground Layer
 
     void Start()
     {
@@ -20,8 +24,14 @@ public class PlayerComtroller : MonoBehaviour
     {
         theRB.velocity = new Vector2 (Input.GetAxisRaw("Horizontal") * moveSpeed, theRB.velocity.y);
 
+        isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, .2f, whatIsGround);
+
         if(Input.GetButtonDown("Jump")) { 
-            theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+            if(isGrounded)
+            {
+                theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+            }
+            
         }
     }
 }
