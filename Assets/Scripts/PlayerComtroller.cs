@@ -9,6 +9,7 @@ public class PlayerComtroller : MonoBehaviour
     private float jumpForce;
 
     private bool isGrounded;
+    private bool canDoubleJump;
 
     public Rigidbody2D theRB;
     public Transform groundCheckPoint; // Ground Point of the Player
@@ -26,10 +27,23 @@ public class PlayerComtroller : MonoBehaviour
 
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, .2f, whatIsGround);
 
+        if (isGrounded)
+        {
+            canDoubleJump = true;
+        }
+
         if(Input.GetButtonDown("Jump")) { 
             if(isGrounded)
             {
                 theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+            }
+            else
+            {
+                if(canDoubleJump)
+                {
+                    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                    canDoubleJump = false;
+                }
             }
             
         }
