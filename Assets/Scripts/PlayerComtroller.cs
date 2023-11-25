@@ -11,6 +11,7 @@ public class PlayerComtroller : MonoBehaviour
     private bool isGrounded;
     private bool canDoubleJump;
 
+    public Animator anim;
     public Rigidbody2D theRB;
     public Transform groundCheckPoint; // Ground Point of the Player
     public LayerMask whatIsGround; // Ground Layer
@@ -47,5 +48,8 @@ public class PlayerComtroller : MonoBehaviour
             }
             
         }
+
+        anim.SetFloat("speed", Mathf.Abs(theRB.velocity.x));
+        anim.SetBool("isGrounded", isGrounded);
     }
 }
