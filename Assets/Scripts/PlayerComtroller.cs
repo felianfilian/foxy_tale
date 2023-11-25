@@ -13,11 +13,14 @@ public class PlayerComtroller : MonoBehaviour
 
     public Animator anim;
     public Rigidbody2D theRB;
+    public SpriteRenderer theSR;
     public Transform groundCheckPoint; // Ground Point of the Player
     public LayerMask whatIsGround; // Ground Layer
 
     void Start()
     {
+        anim = GetComponent<Animator>();
+        theSR = GetComponent<SpriteRenderer>();
         moveSpeed = 10;
         jumpForce = 15;
     }
@@ -49,7 +52,20 @@ public class PlayerComtroller : MonoBehaviour
             
         }
 
+        ChangeDirection();
+
         anim.SetFloat("speed", Mathf.Abs(theRB.velocity.x));
         anim.SetBool("isGrounded", isGrounded);
+    }
+
+    public void ChangeDirection()
+    {
+        if(theRB.velocity.x < 0) { 
+            theSR.flipX = true;
+        } else if(theRB.velocity.x > 0)
+        {
+            theSR.flipX=false;
+        }
+
     }
 }
