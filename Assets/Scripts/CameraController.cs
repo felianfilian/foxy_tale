@@ -19,6 +19,7 @@ public class CameraController : MonoBehaviour
         transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z); 
         float amountToMoveX = transform.position.x - lastXPos;
         farBackground.position += new Vector3(amountToMoveX, 0f, 0f);
+        middleBackground.position += new Vector3(amountToMoveX, 0f, 0f) * 0.5f;
 
         lastXPos = transform.position.x;
     }
