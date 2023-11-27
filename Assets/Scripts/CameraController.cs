@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float lastXPos;
+    public Vector2 lastPos;
 
     public Transform target;
     public Transform farBackground, middleBackground;
@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
-        lastXPos = transform.position.x;
+        lastPos = transform.position;
         camHeight = Camera.main.orthographicSize;
         camWidth = camHeight * Camera.main.aspect;
     }
@@ -28,10 +28,12 @@ public class CameraController : MonoBehaviour
         float clampedY = Mathf.Clamp(target.position.y, minPosY, maxPosY);
         transform.position = new Vector3(target.position.x, clampedY, transform.position.z);
 
-        float amountToMoveX = transform.position.x - lastXPos;
-        farBackground.position += new Vector3(amountToMoveX, 0f, 0f);
-        middleBackground.position += new Vector3(amountToMoveX, 0f, 0f) * 0.5f;
+        // float amountToMoveX = transform.position.x - lastXPos;
+        Vector2 amountToMove = new Vector2(transform.position.x - lastPos.x, transform.position.y - lastPos.y);
 
-        lastXPos = transform.position.x;
+        farBackground.position += new Vector3(amountToMove.x, amountToMove.y, 0f);
+        middleBackground.position += new Vector3(amountToMove.x, amountToMove.y, 0f) * 0.5f;
+
+        lastPos = transform.position;
     }
 }
