@@ -4589,6 +4589,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38e4073e3ff2cb44a96445f90ae772e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hearts:
+  - {fileID: 1881754129}
+  - {fileID: 343193918}
+  - {fileID: 1790979285}
+  heartFull: {fileID: 8109154662235370213, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
+  heartHalf: {fileID: 2139837793675082937, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
+  heartEmpty: {fileID: -4390673095631447188, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
 --- !u!4 &647125763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3303385569024799149, guid: 75fd29efa179c0148a8551790a495c9e, type: 3}
