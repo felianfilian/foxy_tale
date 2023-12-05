@@ -7,7 +7,7 @@ public class PlayerHealthController : MonoBehaviour
     public static PlayerHealthController Instance;
 
     public int currentHealth;
-    public int maxHealth = 3;
+    public int maxHealth = 6;
 
     private void Awake()
     {
