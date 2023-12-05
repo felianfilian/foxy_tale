@@ -28,13 +28,22 @@ public class UIController : MonoBehaviour
 
     public void UpdateHealthDisplay()
     {
-        for(int i = 0; i < PlayerHealthController.Instance.maxHealth; i++)
+        for(int i = 0; i < hearts.Length; i++)
         {
             hearts[i].sprite = heartEmpty;
         }
-        for (int i = 0; i < PlayerHealthController.Instance.currentHealth; i++)
+        int actualHealth = PlayerHealthController.Instance.currentHealth;
+        for (int i = 0; i < actualHealth; i++)
         {
-            hearts[i].sprite = heartFull;
+            int index = Mathf.Abs(i / 2);
+             if(actualHealth % 2 == 0)
+            {
+                hearts[i].sprite = heartFull;
+            } else
+            {
+                hearts[i].sprite = heartHalf;
+            }
+            
         }
     }
 }
