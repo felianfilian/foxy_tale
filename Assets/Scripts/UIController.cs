@@ -32,5 +32,9 @@ public class UIController : MonoBehaviour
         {
             hearts[i].sprite = heartEmpty;
         }
+        for (int i = 0; i < PlayerHealthController.Instance.currentHealth; i++)
+        {
+            hearts[i].sprite = heartFull;
+        }
     }
 }

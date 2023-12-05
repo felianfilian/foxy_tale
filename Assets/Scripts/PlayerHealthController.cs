@@ -30,7 +30,9 @@ public class PlayerHealthController : MonoBehaviour
         currentHealth -= damage;
         if(currentHealth <= 0)
         {
+            currentHealth = 0;
             gameObject.SetActive(false);
         }
+        UIController.Instance.UpdateHealthDisplay();
     }
 }
