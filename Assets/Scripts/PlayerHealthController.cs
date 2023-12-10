@@ -7,7 +7,7 @@ public class PlayerHealthController : MonoBehaviour
     public static PlayerHealthController Instance;
 
     public int currentHealth;
-    public int maxHealth = 6;
+    private int maxHealth;
 
     private void Awake()
     {
@@ -16,6 +16,7 @@ public class PlayerHealthController : MonoBehaviour
 
     void Start()
     {
+        maxHealth = UIController.Instance.hearts.Length * 2;
         currentHealth = maxHealth;
     }
 
