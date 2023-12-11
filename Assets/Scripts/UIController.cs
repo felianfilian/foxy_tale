@@ -33,7 +33,7 @@ public class UIController : MonoBehaviour
         for (int i = 0; i < hearts.Length; i++)
         {
             heartCounter = (i + 1) * 2;
-            if ( heartCounter<= actualHealth)
+            if (heartCounter<= actualHealth)
             {
                 hearts[i].sprite = heartFull;
             } else if (heartCounter-1 == actualHealth)
