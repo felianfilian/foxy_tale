@@ -39,7 +39,13 @@ public class PlayerComtroller : MonoBehaviour
 
     void Update()
     {
-        Move();
+        if(knockBackCounter <= 0)
+        {
+            Move();
+        } else
+        {
+            KnockBack();
+        }
     }
 
     public void Move()
@@ -50,7 +56,7 @@ public class PlayerComtroller : MonoBehaviour
         {
             canDoubleJump = true;
         }
-
+        Jump();
         ChangeDirection();
 
         anim.SetFloat("speed", Mathf.Abs(theRB.velocity.x));
@@ -74,6 +80,25 @@ public class PlayerComtroller : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void KnockBackMove()
+    {
+        knockBackCounter -= Time.deltaTime;
+        if (!theSR.flipX)
+        {
+            theRB.velocity = new Vector2(-knockBackForce, theRB.velocity.y);
+        }
+        else
+        {
+            theRB.velocity = new Vector2(knockBackForce, theRB.velocity.y);
+        }
+    }
+
+    public void KnockBack()
+    {
+        knockBackCounter = knockBackLength;
+        theRB.velocity = new Vector2(0f, knockBackForce);
     }
 
     public void ChangeDirection()
