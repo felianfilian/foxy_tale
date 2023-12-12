@@ -99,6 +99,7 @@ public class PlayerComtroller : MonoBehaviour
     {
         knockBackCounter = knockBackLength;
         theRB.velocity = new Vector2(0f, knockBackForce*2);
+        anim.SetTrigger("hurt");
     }
 
     public void ChangeDirection()
