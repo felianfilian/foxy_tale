@@ -5,8 +5,13 @@ using UnityEngine;
 
 public class PlayerComtroller : MonoBehaviour
 {
+    public static PlayerComtroller instance;
+
     private float moveSpeed;
     private float jumpForce;
+    private float knockBackLength;
+    private float knockBackForce;
+    private float knockBackCounter;
 
     private bool isGrounded;
     private bool canDoubleJump;
@@ -17,12 +22,19 @@ public class PlayerComtroller : MonoBehaviour
     public Transform groundCheckPoint; // Ground Point of the Player
     public LayerMask whatIsGround; // Ground Layer
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         anim = GetComponent<Animator>();
         theSR = GetComponent<SpriteRenderer>();
         moveSpeed = 10;
         jumpForce = 15;
+        knockBackLength = 0.5f;
+        knockBackForce = 8f;
     }
 
     void Update()
