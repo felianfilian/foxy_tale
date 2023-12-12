@@ -53,6 +53,7 @@ public class PlayerHealthController : MonoBehaviour
             {
                 invincibilityCounter = invincibilityLength;
                 theSR.color = new Color(theSR.color.r, theSR.color.g, theSR.color.b, 0.5f);
+                PlayerComtroller.instance.KnockBack();
             }
             UIController.Instance.UpdateHealthDisplay();
         }

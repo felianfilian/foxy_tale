@@ -34,7 +34,7 @@ public class PlayerComtroller : MonoBehaviour
         moveSpeed = 10;
         jumpForce = 15;
         knockBackLength = 0.5f;
-        knockBackForce = 8f;
+        knockBackForce = 4f;
     }
 
     void Update()
@@ -44,7 +44,7 @@ public class PlayerComtroller : MonoBehaviour
             Move();
         } else
         {
-            KnockBack();
+            KnockBackMove();
         }
     }
 
@@ -98,7 +98,7 @@ public class PlayerComtroller : MonoBehaviour
     public void KnockBack()
     {
         knockBackCounter = knockBackLength;
-        theRB.velocity = new Vector2(0f, knockBackForce);
+        theRB.velocity = new Vector2(0f, knockBackForce*2);
     }
 
     public void ChangeDirection()
