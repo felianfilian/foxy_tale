@@ -39,35 +39,41 @@ public class PlayerComtroller : MonoBehaviour
 
     void Update()
     {
-        theRB.velocity = new Vector2 (Input.GetAxisRaw("Horizontal") * moveSpeed, theRB.velocity.y);
+        Move();
+    }
 
+    public void Move()
+    {
+        theRB.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, theRB.velocity.y);
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, .2f, whatIsGround);
-
         if (isGrounded)
         {
             canDoubleJump = true;
-        }
-
-        if(Input.GetButtonDown("Jump")) { 
-            if(isGrounded)
-            {
-                theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-            }
-            else
-            {
-                if(canDoubleJump)
-                {
-                    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-                    canDoubleJump = false;
-                }
-            }
-            
         }
 
         ChangeDirection();
 
         anim.SetFloat("speed", Mathf.Abs(theRB.velocity.x));
         anim.SetBool("isGrounded", isGrounded);
+    }
+
+    public void Jump()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (isGrounded)
+            {
+                theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+            }
+            else
+            {
+                if (canDoubleJump)
+                {
+                    theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+                    canDoubleJump = false;
+                }
+            }
+        }
     }
 
     public void ChangeDirection()
