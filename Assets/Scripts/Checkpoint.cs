@@ -13,6 +13,7 @@ public class Checkpoint : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             theSR.sprite = cpOn;
+            CheckpointsController.instance.DeactivateCheckpoints();
         }
     }
 

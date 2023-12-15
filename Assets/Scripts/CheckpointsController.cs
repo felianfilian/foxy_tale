@@ -18,8 +18,11 @@ public class CheckpointsController : MonoBehaviour
     }
 
     
-    void Update()
+    public void DeactivateCheckpoints()
     {
-        
+        for(int i = 0; i < checkpoints.Length; i++)
+        {
+            checkpoints[i].ResetCheckpoints();
+        }
     }
 }
