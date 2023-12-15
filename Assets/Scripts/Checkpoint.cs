@@ -15,6 +15,7 @@ public class Checkpoint : MonoBehaviour
             
             CheckpointsController.instance.DeactivateCheckpoints();
             theSR.sprite = cpOn;
+            CheckpointsController.instance.SetSpawnPoint(transform.position);
         }
     }
 
