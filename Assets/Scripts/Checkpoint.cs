@@ -15,4 +15,9 @@ public class Checkpoint : MonoBehaviour
             theSR.sprite = cpOn;
         }
     }
+
+    public void ResetCheckpoints()
+    {
+        theSR.sprite = cpOff;
+    }
 }
