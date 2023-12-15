@@ -28,7 +28,7 @@ public class UIController : MonoBehaviour
 
     public void UpdateHealthDisplay()
     {
-        int actualHealth = PlayerHealthController.Instance.currentHealth;
+        int actualHealth = PlayerHealthController.instance.currentHealth;
         int heartCounter = 0;
         for (int i = 0; i < hearts.Length; i++)
         {

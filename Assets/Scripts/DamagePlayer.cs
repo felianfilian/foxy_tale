@@ -8,7 +8,7 @@ public class DamagePlayer : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealthController.Instance.DealDamage(1);
+            PlayerHealthController.instance.DealDamage(1);
         }
     }
 }

@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PlayerHealthController : MonoBehaviour
 {
-    public static PlayerHealthController Instance;
+    public static PlayerHealthController instance;
 
     public int currentHealth;
     public float invincibilityLength = 1f;
 
-    private int maxHealth;
+    public int maxHealth;
     private float invincibilityCounter;
 
     private SpriteRenderer theSR;
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
 
         theSR = GetComponent<SpriteRenderer>();
     }
@@ -47,7 +47,8 @@ public class PlayerHealthController : MonoBehaviour
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
+                LevelManager.instance.RespawnPlayer();
             }
             else
             {
