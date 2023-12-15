@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 164297395}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: CheckpointController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5384,6 +5384,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11f96ff2d91e514a91e716f7eb984cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  theSR: {fileID: 1506622523906153544}
+  cpOn: {fileID: 21300000, guid: 0de9a52a86712d344adedb2493bb65d1, type: 3}
+  cpOff: {fileID: 21300000, guid: 599bb51c6d72aae4f9ab0e0dc81c3996, type: 3}
+--- !u!58 &1506622523906153543
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506622523906153541}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.2
+--- !u!212 &1506622523906153544 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1178684494562836657, guid: 33f625e9c34fceb4dafdffe92594d88a, type: 3}
+  m_PrefabInstance: {fileID: 1506622523906153540}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6978176728354470167
 PrefabInstance:
   m_ObjectHideFlags: 0
