@@ -10,6 +10,8 @@ public class UIController : MonoBehaviour
     public UnityEngine.UI.Image[] hearts;
     public Sprite heartFull, heartHalf, heartEmpty;
 
+    public Text gemText;
+
     private void Awake()
     {
         Instance = this;
@@ -18,6 +20,7 @@ public class UIController : MonoBehaviour
     void Start()
     {
         UpdateHealthDisplay();
+        UpdateGemCount();
     }
 
     // Update is called once per frame
@@ -45,6 +48,11 @@ public class UIController : MonoBehaviour
             }
             
         }       
+    }
+
+    public void UpdateGemCount()
+    {
+        gemText.text = LevelManager.instance.gemsCollected.ToString();
     }
 
 }

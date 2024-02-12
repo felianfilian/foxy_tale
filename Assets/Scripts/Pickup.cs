@@ -13,13 +13,15 @@ public class Pickup : MonoBehaviour
         {
             if(item == Item.Gem)
             {
-                LevelManager.instance.gemscollected++;
+                LevelManager.instance.gemsCollected++;
+                UIController.Instance.UpdateGemCount();
+                Destroy(gameObject);
             }
-            if (item == Item.Health)
+            if (item == Item.Health && PlayerHealthController.instance.currentHealth < PlayerHealthController.instance.maxHealth)
             {
                 PlayerHealthController.instance.HealthChange(2);
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
         }
     }
 }
