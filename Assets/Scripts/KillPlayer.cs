@@ -9,7 +9,6 @@ public class KillPlayer : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            PlayerHealthController.instance.DealDamage(2);
             LevelManager.instance.RespawnPlayer();
         }
     }
