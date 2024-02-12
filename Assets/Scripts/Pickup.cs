@@ -14,8 +14,12 @@ public class Pickup : MonoBehaviour
             if(item == Item.Gem)
             {
                 LevelManager.instance.gemscollected++;
-                Destroy(gameObject);
             }
+            if (item == Item.Health)
+            {
+                PlayerHealthController.instance.HealthChange(2);
+            }
+            Destroy(gameObject);
         }
     }
 }

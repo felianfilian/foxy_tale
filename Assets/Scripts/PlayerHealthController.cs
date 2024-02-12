@@ -59,4 +59,17 @@ public class PlayerHealthController : MonoBehaviour
         }
         
     }
+
+    public void HealthChange(int amount)
+    {
+        currentHealth += amount;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            LevelManager.instance.RespawnPlayer();
+        } else if (currentHealth > maxHealth) {
+            currentHealth = maxHealth;
+        }
+        UIController.Instance.UpdateHealthDisplay();
+    }
 }
