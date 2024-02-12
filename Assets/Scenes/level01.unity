@@ -4889,7 +4889,7 @@ MonoBehaviour:
   heartFull: {fileID: 8109154662235370213, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
   heartHalf: {fileID: 2139837793675082937, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
   heartEmpty: {fileID: -4390673095631447188, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
-  gemText: {fileID: 0}
+  gemText: {fileID: 1159307332}
 --- !u!1 &480126098
 GameObject:
   m_ObjectHideFlags: 0
@@ -5111,6 +5111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 1
+  pickupEffect: {fileID: 1016362403309546338, guid: d00c3b1dce0eb6a4494da887e1b5a737, type: 3}
 --- !u!58 &601352219
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5390,6 +5391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 0
+  pickupEffect: {fileID: 1016362403309546338, guid: d00c3b1dce0eb6a4494da887e1b5a737, type: 3}
 --- !u!58 &836652629
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5839,6 +5841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 0
+  pickupEffect: {fileID: 1016362403309546338, guid: d00c3b1dce0eb6a4494da887e1b5a737, type: 3}
 --- !u!58 &1434712032
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5934,6 +5937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 0
+  pickupEffect: {fileID: 1016362403309546338, guid: d00c3b1dce0eb6a4494da887e1b5a737, type: 3}
 --- !u!58 &1456236815
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6306,6 +6310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 1
+  pickupEffect: {fileID: 1016362403309546338, guid: d00c3b1dce0eb6a4494da887e1b5a737, type: 3}
 --- !u!58 &1877225065
 CircleCollider2D:
   m_ObjectHideFlags: 0
