@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4542502378119507360}
   - component: {fileID: 2502094738807650656}
-  - component: {fileID: 6610402168647163078}
   - component: {fileID: 8387226709027941559}
   - component: {fileID: 2281948857906686714}
+  - component: {fileID: 5203098616537146987}
   m_Layer: 0
   m_Name: Health
   m_TagString: Untagged
@@ -87,27 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6610402168647163078
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6071188184816873989}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6370eeb626aeae54294c605f130f2e01, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!58 &8387226709027941559
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -155,5 +134,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20027f89945c0e41a24c001beead9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCollected: 0
   item: 1
   pickupEffect: {fileID: 1016362403309546338, guid: d00c3b1dce0eb6a4494da887e1b5a737, type: 3}
+--- !u!95 &5203098616537146987
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6071188184816873989}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6370eeb626aeae54294c605f130f2e01, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

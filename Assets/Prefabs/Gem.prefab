@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4596746155663205583}
   - component: {fileID: 6995730715280677491}
-  - component: {fileID: 5924099520838125650}
-  - component: {fileID: 4731874869729522904}
-  - component: {fileID: 8974540613586575928}
+  - component: {fileID: 5725499587254492714}
+  - component: {fileID: 2431167619315568338}
+  - component: {fileID: 4995279584953600158}
   m_Layer: 0
   m_Name: Gem
   m_TagString: Untagged
@@ -87,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5924099520838125650
+--- !u!95 &5725499587254492714
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -108,7 +108,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!58 &4731874869729522904
+--- !u!58 &2431167619315568338
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.46875
---- !u!114 &8974540613586575928
+--- !u!114 &4995279584953600158
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,5 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20027f89945c0e41a24c001beead9fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCollected: 0
   item: 0
   pickupEffect: {fileID: 1016362403309546338, guid: d00c3b1dce0eb6a4494da887e1b5a737, type: 3}
