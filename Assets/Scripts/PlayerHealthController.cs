@@ -12,6 +12,8 @@ public class PlayerHealthController : MonoBehaviour
     public int maxHealth;
     private float invincibilityCounter;
 
+    public GameObject deathEffect;
+
     private SpriteRenderer theSR;
 
     private void Awake()
@@ -47,6 +49,7 @@ public class PlayerHealthController : MonoBehaviour
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
+                Instantiate(deathEffect, transform.position, transform.rotation);
                 LevelManager.instance.RespawnPlayer();
             }
             else
