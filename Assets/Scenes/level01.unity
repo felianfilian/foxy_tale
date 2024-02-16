@@ -6146,6 +6146,7 @@ MonoBehaviour:
   moveSpeed: 5
   theRB: {fileID: 1009394161}
   theSR: {fileID: 1009394160}
+  enemyPos: {fileID: 1009394157}
   leftPoint: {fileID: 2010161866}
   rightPoint: {fileID: 837547108}
 --- !u!1 &1790979283

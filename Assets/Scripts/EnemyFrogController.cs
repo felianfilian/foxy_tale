@@ -8,6 +8,7 @@ public class EnemyFrogController : MonoBehaviour
 
     public Rigidbody2D theRB;
     public SpriteRenderer theSR;
+    public Transform enemyPos;
     public Transform leftPoint, rightPoint;
 
     private bool movingRight;
@@ -19,10 +20,28 @@ public class EnemyFrogController : MonoBehaviour
 
     void Update()
     {
-        if(movingRight)
+        EnemyMove();
+    }
+
+    public void EnemyMove()
+    {
+        if (movingRight)
         {
-            theRB.velocity = new Vector2 (moveSpeed, theRB.velocity.y);
+            theRB.velocity = new Vector2(moveSpeed, theRB.velocity.y);
             theSR.flipX = true;
+            if (enemyPos.position.x > rightPoint.position.x)
+            {
+                movingRight = false;
+            }
+        }
+        else
+        {
+            theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
+            theSR.flipX = false;
+            if (enemyPos.position.x < leftPoint.position.x)
+            {
+                movingRight = true;
+            }
         }
     }
 }
