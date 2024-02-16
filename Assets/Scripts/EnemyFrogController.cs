@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyFrogController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float moveTime = 3f;
+    public float waitTime = 2f;
 
     public Rigidbody2D theRB;
     public SpriteRenderer theSR;
@@ -12,15 +14,33 @@ public class EnemyFrogController : MonoBehaviour
     public Transform leftPoint, rightPoint;
 
     private bool movingRight;
+    private float moveCount;
+    private float waitCount;
 
     private void Start()
     {
         movingRight = true;
+        moveCount = moveTime;
     }
 
     void Update()
     {
-        EnemyMove();
+        if(moveCount > 0)
+        {
+            moveCount -= Time.deltaTime;
+            EnemyMove();
+            if(moveCount <= 0)
+            {
+                waitCount = Random.Range(waitTime * 0.75f, waitTime * 1.25f);
+            }
+        } else if(waitCount > 0)
+        {
+            waitCount -= Time.deltaTime;
+            if(waitCount <= 0)
+            {
+                moveCount = Random.Range(moveTime * 0.75f, moveTime * 1.25f);
+            }
+        }
     }
 
     public void EnemyMove()
@@ -41,6 +61,7 @@ public class EnemyFrogController : MonoBehaviour
             if (enemyPos.position.x < leftPoint.position.x)
             {
                 movingRight = true;
+                Debug.Log(enemyPos.position.x + " - " + leftPoint.position.x);
             }
         }
     }
