@@ -12,9 +12,15 @@ public class Stompbox : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
+            float dropSelect = Random.Range(0, 100f);
             collision.transform.parent.gameObject.SetActive(false);
             PlayerComtroller.instance.Bounce();
             Instantiate(deathEffect, collision.transform.position, collision.transform.rotation);
+            if(dropSelect <= chanceToDrop)
+            {
+                Instantiate(collectible, collision.transform.position, collision.transform.rotation);
+            }
+            
         }
     }
 }
