@@ -8,19 +8,22 @@ public class EnemyFrogController : MonoBehaviour
     public float moveTime = 3f;
     public float waitTime = 2f;
 
-    public Rigidbody2D theRB;
-    public SpriteRenderer theSR;
-    public Transform enemyPos;
     public Transform leftPoint, rightPoint;
 
     private bool movingRight;
     private float moveCount;
     private float waitCount;
 
+    private Rigidbody2D theRB;
+    private SpriteRenderer theSR;
+
     private void Start()
     {
         movingRight = true;
         moveCount = moveTime;
+
+        theRB = GetComponent<Rigidbody2D>();
+        theSR = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -49,7 +52,7 @@ public class EnemyFrogController : MonoBehaviour
         {
             theRB.velocity = new Vector2(moveSpeed, theRB.velocity.y);
             theSR.flipX = true;
-            if (enemyPos.position.x > rightPoint.position.x)
+            if (transform.position.x > rightPoint.position.x)
             {
                 movingRight = false;
             }
@@ -58,10 +61,9 @@ public class EnemyFrogController : MonoBehaviour
         {
             theRB.velocity = new Vector2(-moveSpeed, theRB.velocity.y);
             theSR.flipX = false;
-            if (enemyPos.position.x < leftPoint.position.x)
+            if (transform.position.x < leftPoint.position.x)
             {
                 movingRight = true;
-                Debug.Log(enemyPos.position.x + " - " + leftPoint.position.x);
             }
         }
     }
