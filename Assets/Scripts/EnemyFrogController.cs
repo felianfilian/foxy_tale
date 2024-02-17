@@ -8,14 +8,16 @@ public class EnemyFrogController : MonoBehaviour
     public float moveTime = 3f;
     public float waitTime = 2f;
 
+    public Animator anim;
     public Transform leftPoint, rightPoint;
+    public SpriteRenderer theSR;
 
     private bool movingRight;
     private float moveCount;
     private float waitCount;
 
     private Rigidbody2D theRB;
-    private SpriteRenderer theSR;
+    
 
     private void Start()
     {
@@ -23,7 +25,6 @@ public class EnemyFrogController : MonoBehaviour
         moveCount = moveTime;
 
         theRB = GetComponent<Rigidbody2D>();
-        theSR = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -36,6 +37,7 @@ public class EnemyFrogController : MonoBehaviour
             {
                 waitCount = Random.Range(waitTime * 0.75f, waitTime * 1.25f);
             }
+            anim.SetBool("isMoving", true);
         } else if(waitCount > 0)
         {
             waitCount -= Time.deltaTime;
@@ -43,6 +45,7 @@ public class EnemyFrogController : MonoBehaviour
             {
                 moveCount = Random.Range(moveTime * 0.75f, moveTime * 1.25f);
             }
+            anim.SetBool("isMoving", false);
         }
     }
 
