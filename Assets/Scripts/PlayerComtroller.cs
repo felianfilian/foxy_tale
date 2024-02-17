@@ -82,6 +82,7 @@ public class PlayerComtroller : MonoBehaviour
                     canDoubleJump = false;
                 }
             }
+            AudioManager.instance.PlaaySFX(10);
         }
     }
 

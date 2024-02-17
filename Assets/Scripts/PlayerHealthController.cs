@@ -50,6 +50,7 @@ public class PlayerHealthController : MonoBehaviour
             {
                 currentHealth = 0;
                 Instantiate(deathEffect, transform.position, transform.rotation);
+                AudioManager.instance.PlaaySFX(8);
                 LevelManager.instance.RespawnPlayer();
             }
             else
@@ -59,6 +60,7 @@ public class PlayerHealthController : MonoBehaviour
                 PlayerComtroller.instance.KnockBack();
             }
             UIController.Instance.UpdateHealthDisplay();
+            AudioManager.instance.PlaaySFX(9);
         }
         
     }

@@ -20,7 +20,7 @@ public class Stompbox : MonoBehaviour
             {
                 Instantiate(collectible, collision.transform.position, collision.transform.rotation);
             }
-            
+            AudioManager.instance.PlaaySFX(3);
         }
     }
 }
