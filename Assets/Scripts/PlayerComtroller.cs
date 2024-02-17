@@ -7,6 +7,7 @@ public class PlayerComtroller : MonoBehaviour
 {
     public static PlayerComtroller instance;
 
+    private float bounceForce;
     private float moveSpeed;
     private float jumpForce;
     private float knockBackLength;
@@ -31,6 +32,8 @@ public class PlayerComtroller : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         theSR = GetComponent<SpriteRenderer>();
+
+        bounceForce = 10f;
         moveSpeed = 10;
         jumpForce = 15;
         knockBackLength = 0.5f;
@@ -111,5 +114,10 @@ public class PlayerComtroller : MonoBehaviour
             theSR.flipX=false;
         }
 
+    }
+
+    public void Bounce()
+    {
+        theRB.velocity = new Vector2(theRB.velocity.x, bounceForce);
     }
 }
