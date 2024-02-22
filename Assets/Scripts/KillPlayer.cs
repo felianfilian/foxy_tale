@@ -10,6 +10,7 @@ public class KillPlayer : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             LevelManager.instance.RespawnPlayer();
+            AudioManager.instance.PlaaySFX(11);
         }
     }
 }
