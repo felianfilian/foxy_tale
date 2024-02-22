@@ -7707,6 +7707,8 @@ MonoBehaviour:
   - {fileID: 2118108354}
   - {fileID: 2122578440}
   - {fileID: 611832845}
+  bgm: {fileID: 1795706860}
+  levelEndMusic: {fileID: 144548735}
 --- !u!1 &1790979283
 GameObject:
   m_ObjectHideFlags: 0
